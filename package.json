@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/content_script.ts --bundle --format=iife --target=chrome115 --outfile=dist/content_script.js",
+    "build:ts": "esbuild src/content_script.ts --bundle --format=iife --target=chrome115 --outfile=dist/content_script.js",
+    "build:static": "mkdir -p dist && cp manifest.json dist/ && cp -R icons dist/",
+    "build": "npm run build:ts && npm run build:static",
     "watch": "npm run build --watch",
     "prebuild": "rimraf dist"
   },
