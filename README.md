@@ -9,6 +9,4 @@
 3. Click **Load unpacked** → choose that `dist/` folder.
 4. After edits: press **⟳ Reload**.
 
-—avoids the duplicate “3.” and puts the copy step first so the path is already permanent.
-
 **Tip**: symlink `dist` into that fixed folder (`ln -s $(pwd)/dist ~/my-plugins/auto-remove`) so rebuilding instantly updates the loaded extension.
