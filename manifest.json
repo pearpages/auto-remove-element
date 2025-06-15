@@ -1,0 +1,13 @@
+{
+  "name": "Auto-Remove Element",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Deletes a specific element as soon as it shows up.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

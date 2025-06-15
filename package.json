@@ -1,0 +1,16 @@
+{
+  "name": "auto-remove-element",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/content_script.ts --bundle --format=iife --target=chrome115 --outfile=dist/content_script.js",
+    "watch": "npm run build --watch",
+    "prebuild": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.269",
+    "esbuild": "^0.25.5",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.0"
+  }
+}
