@@ -1,8 +1,16 @@
 "use strict";
 (() => {
   // src/content_script.ts
-  var TARGET = ".ev-open-modal-paywall-REQUIRE_LOGIN";
-  var removeIfFound = () => document.querySelectorAll(TARGET).forEach((el) => el.remove());
+  var TARGETS = [
+    ".ev-open-modal-paywall-REQUIRE_LOGIN",
+    ".ev-open-modal-paywall-REQUIRE_ENTITLEMENT"
+  ];
+  var removeIfFound = () => TARGETS.forEach((target) => {
+    document.querySelectorAll(target).forEach((el) => el.remove());
+  });
   removeIfFound();
-  new MutationObserver(removeIfFound).observe(document.documentElement, { childList: true, subtree: true });
+  new MutationObserver(removeIfFound).observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
 })();
